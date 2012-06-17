@@ -26,12 +26,12 @@
 		<td align="center"><?php echo strBlockTime($site->blocking_time); ?></td>
 		<td align="center" style="width:100px;">
 			<?php 
-			$date_block = isBlock($account_id,$site->site_id,$current_time,$ip_address,$serverLogDB,$vp_logs,$serverObj);
+			$date_block = $vs_list[$site->site_id]['dateblock'];
 			if($date_block<=0){ ?>
 
 				<a href="index.php?module=voteforpoints&action=vote&sid=<?php echo $site->site_id; ?>" target="_blank">Vote Now</a>
 			<?php } else { ?>
-				<label style="color:red" onclick="javascript: alert('Blocked in voting for site until: <?php echo date("Y-m-d G:i:s",$date_block); ?>');">Vote</label>
+				<label style="color:red" onclick="javascript: alert('Blocked in voting for this site until: <?php echo date("Y-m-d G:i:s",$date_block); ?>');">Vote</label>
 			<?php } ?>
 		</td>
 	</tr>
