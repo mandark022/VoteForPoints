@@ -24,4 +24,5 @@ $sth->execute();
 
 $vp_sites = $sth->fetchAll();
 
+
 ?>
